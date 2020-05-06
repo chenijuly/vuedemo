@@ -1,18 +1,20 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
+    <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/lsit">About</router-link>
     </div>
-    <router-view /> -->
+    <!-- <router-view /> -->
     <FromTest></FromTest>
+    <Tree></Tree>
   </div>
 </template>
 <script>
-import FromTest from './components/form'
+import FromTest from "./components/form";
+import Tree from "./components/tree";
 export default {
   name: "app",
-  components: { FromTest }
+  components: { FromTest, Tree }
 };
 </script>
 

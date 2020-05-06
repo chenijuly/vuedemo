@@ -18,6 +18,8 @@
 import CInput from "./CInput.vue";
 import CFormItem from "./CFormItem.vue";
 import CForm from "./CForm.vue";
+import Notice from "../notice";
+import create from "@/utils/create";
 export default {
   components: {
     CInput,
@@ -38,12 +40,23 @@ export default {
   },
   methods: {
     onLogin() {
+      let notice;
+      console.log(Notice);
       this.$refs.loginForm.validate(isValid => {
         if (isValid) {
+          notice = create(Notice, {
+            title: "xx",
+            message: "校验通过"
+          });
           console.log("校验通过");
         } else {
+          notice = create(Notice, {
+            title: "xx",
+            message: "校验有误"
+          });
           console.log("校验有误");
         }
+        notice.show();
       });
     }
   }

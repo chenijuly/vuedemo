@@ -65,10 +65,14 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: center;
   .form-label {
     width: 100px;
+    text-align: right;
+    padding-right: 10px;
   }
   .form-error-msg {
+    padding-left: 10px;
     display: contents;
     color: red;
   }
