@@ -1,6 +1,7 @@
 <template>
   <div>
     List
+  {{ crumbData }}
   </div>
 </template>
 <script>

@@ -5,6 +5,7 @@
       <router-link to="/list">About</router-link>
     </div>
     <router-view />
+    <comp></comp>
     <FromTest></FromTest>
     <Tree></Tree>
   </div>

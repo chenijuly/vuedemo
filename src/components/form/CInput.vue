@@ -7,8 +7,10 @@
   </div>
 </template>
 <script>
+import emmiter from "@/mixins/emmiter";
 export default {
   inheritAttrs: false, //避免顶层的从其继承
+  mixins: [emmiter],
   props: {
     value: {
       type: [String],
@@ -20,7 +22,8 @@ export default {
       // 通知父组件数值变化
       this.$emit("input", e.target.value);
       // 通知FormItem校验
-      this.$parent.$emit("validate");
+      // this.$parent.$emit("validate");
+      this.dispatch("validate");
     }
   }
 };

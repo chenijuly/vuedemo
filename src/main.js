@@ -6,6 +6,16 @@ import store from "./store";
 
 Vue.config.productionTip = false;
 Vue.prototype.$bus = new Vue();
+
+// <div id="box", class="foo"><span> aaa </span</div>
+Vue.component("comp", {
+  render(h) {
+    return h("div", { class: { foo: true }, attrs: { id: "box" } }, [
+      h("span", "aaa")
+    ]);
+  }
+});
+
 Vue.prototype.$dispatch = function(eventName, data) {
   let parent = this.$parent;
   // 查找父元素
