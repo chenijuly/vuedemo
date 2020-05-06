@@ -6,16 +6,20 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      crumbData: []
+    };
   },
-  watch:{
-    $route() {
-      console.log(this.$route.matched);
+  watch: {
+    $route: {
+      handler(route) {
+        console.log(route.matched);
+        this.crumbData = route.matched.map(m => m.name || m.redirect);
+      },
+      immediate: true
     }
   },
-  mounted() {
-    console.log(this.$route.matched);
-  }
+  mounted() {}
 };
 </script>
 

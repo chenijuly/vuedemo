@@ -13,7 +13,18 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      crumbData: []
+    };
+  },
+  watch: {
+    $route: {
+      handler() {
+        console.log(this.$route.matched);
+        this.crumbData = this.$route.matched(m => m.name || m.redirect);
+      },
+      immediate: true
+    }
   }
 };
 </script>
