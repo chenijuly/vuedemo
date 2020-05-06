@@ -2,7 +2,8 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 // import router from "./crouter";
-import store from "./store";
+// import store from "./store";
+import store from "./store/cindex";
 
 Vue.config.productionTip = false;
 Vue.prototype.$bus = new Vue();
